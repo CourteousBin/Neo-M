@@ -2,7 +2,7 @@
     <div class="container_box" id="video_box">
         <div class="van_swipe">
             <!--vant van-swipe 滑动组件 -->
-            <van-swipe :show-indicators="false" @change="onChange" vertical :loop="false">
+            <van-swipe :show-indicators="false" @change="onChange" vertical :loop="true">
                 <van-swipe-item v-for="(item, index) in videoList" :key="index" class="product_swiper">
                     <div class="video_container">
                         <!--video属性
@@ -210,7 +210,7 @@
                     author: 'fileStore',
                     des: '文储加油'
                 }, {
-                    url: 'http://ipfs.impool18.com/ipfs/QmTWqeCa9HVEagNeywwQi8B4zBG6mHT7YiS95r3AErGvnf/fileStore8.mp4',
+                    url: 'http://ipfs.impool18.com/ipfs/QmTWqeCa9HVEagNeywwQi8B4zBG6mHT7YiS95r3AErGvnf/fileStore4.mp4',
                     cover: 'https://impool.oss-cn-hangzhou.aliyuncs.com/sr2Video/impoolLogo.jpg',
                     tag_image: 'https://impool.oss-cn-hangzhou.aliyuncs.com/App/static/img/invitation-logo.f5526562.png',
                     fabulous: false,//是否赞过
@@ -219,7 +219,7 @@
                     author: 'fileStore',
                     des: '吉时行乐'
                 }, {
-                    url: 'http://ipfs.impool18.com/ipfs/QmTWqeCa9HVEagNeywwQi8B4zBG6mHT7YiS95r3AErGvnf/fileStore4.mp4',
+                    url: 'http://ipfs.impool18.com/ipfs/QmTWqeCa9HVEagNeywwQi8B4zBG6mHT7YiS95r3AErGvnf/fileStore8.mp4',
                     cover: 'https://impool.oss-cn-hangzhou.aliyuncs.com/sr2Video/impoolLogo.jpg',
                     tag_image: 'https://impool.oss-cn-hangzhou.aliyuncs.com/App/static/img/invitation-logo.f5526562.png',
                     fabulous: false,//是否赞过
