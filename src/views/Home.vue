@@ -174,6 +174,7 @@
 </template>
 <script>
     import Vue from "vue";
+    import ipfsRequest from "@/ipfsRequest";
     import {
         Swipe,
         SwipeItem,
@@ -191,7 +192,7 @@
             return {
                 current: 0,
                 videoList: [{
-                    url: 'https://impool.oss-cn-hangzhou.aliyuncs.com/sr2Video/fileStore1.mp4',//视频源
+                    url: 'http://ipfs.impool18.com/ipfs/QmTWqeCa9HVEagNeywwQi8B4zBG6mHT7YiS95r3AErGvnf/fileStore1.mp4',//视频源
                     cover: 'https://impool.oss-cn-hangzhou.aliyuncs.com/sr2Video/impoolLogo.jpg',//封面
                     tag_image: 'https://impool.oss-cn-hangzhou.aliyuncs.com/App/static/img/invitation-logo.f5526562.png',//作者头像
                     fabulous: false,//是否赞过
@@ -200,7 +201,7 @@
                     author: 'fileStore',
                     des: '相信文储不会辜负'
                 }, {
-                    url: 'https://impool.oss-cn-hangzhou.aliyuncs.com/sr2Video/fileStore2.mp4',
+                    url: 'http://ipfs.impool18.com/ipfs/QmTWqeCa9HVEagNeywwQi8B4zBG6mHT7YiS95r3AErGvnf/fileStore2.mp4',
                     cover: 'https://impool.oss-cn-hangzhou.aliyuncs.com/sr2Video/impoolLogo.jpg',
                     tag_image: 'https://impool.oss-cn-hangzhou.aliyuncs.com/App/static/img/invitation-logo.f5526562.png',
                     fabulous: true,//是否赞过
@@ -209,7 +210,7 @@
                     author: 'fileStore',
                     des: '文储加油'
                 }, {
-                    url: 'https://impool.oss-cn-hangzhou.aliyuncs.com/sr2Video/fileStore3.mp4',
+                    url: 'http://ipfs.impool18.com/ipfs/QmTWqeCa9HVEagNeywwQi8B4zBG6mHT7YiS95r3AErGvnf/fileStore8.mp4',
                     cover: 'https://impool.oss-cn-hangzhou.aliyuncs.com/sr2Video/impoolLogo.jpg',
                     tag_image: 'https://impool.oss-cn-hangzhou.aliyuncs.com/App/static/img/invitation-logo.f5526562.png',
                     fabulous: false,//是否赞过
@@ -218,7 +219,7 @@
                     author: 'fileStore',
                     des: '吉时行乐'
                 }, {
-                    url: 'https://impool.oss-cn-hangzhou.aliyuncs.com/sr2Video/fileStore4.mp4',
+                    url: 'http://ipfs.impool18.com/ipfs/QmTWqeCa9HVEagNeywwQi8B4zBG6mHT7YiS95r3AErGvnf/fileStore4.mp4',
                     cover: 'https://impool.oss-cn-hangzhou.aliyuncs.com/sr2Video/impoolLogo.jpg',
                     tag_image: 'https://impool.oss-cn-hangzhou.aliyuncs.com/App/static/img/invitation-logo.f5526562.png',
                     fabulous: false,//是否赞过
@@ -227,7 +228,7 @@
                     author: 'Mr.Ma',
                     des: 'I need to take it together'
                 }, {
-                    url: 'https://impool.oss-cn-hangzhou.aliyuncs.com/sr2Video/fileStore5.mp4',
+                    url: 'http://ipfs.impool18.com/ipfs/QmTWqeCa9HVEagNeywwQi8B4zBG6mHT7YiS95r3AErGvnf/fileStore5.mp4',
                     cover: 'https://impool.oss-cn-hangzhou.aliyuncs.com/sr2Video/impoolLogo.jpg',
                     tag_image: 'https://impool.oss-cn-hangzhou.aliyuncs.com/App/static/img/invitation-logo.f5526562.png',
                     fabulous: false,//是否赞过
@@ -237,7 +238,7 @@
                     des: 'Smile every day'
                 },
                 {
-                    url: 'https://impool.oss-cn-hangzhou.aliyuncs.com/sr2Video/fileStore6.mp4',
+                    url: 'http://ipfs.impool18.com/ipfs/QmTWqeCa9HVEagNeywwQi8B4zBG6mHT7YiS95r3AErGvnf/fileStore6.mp4',
                     cover: 'https://impool.oss-cn-hangzhou.aliyuncs.com/sr2Video/impoolLogo.jpg',
                     tag_image: 'https://impool.oss-cn-hangzhou.aliyuncs.com/App/static/img/invitation-logo.f5526562.png',
                     fabulous: false,//是否赞过
@@ -245,7 +246,38 @@
                     author_id: 1,//作者ID
                     author: 'Mr.Ma',
                     des: 'Smile every day'
-                }],
+                },
+                // {
+                //     url: 'http://ipfs.impool18.com/ipfs/QmTWqeCa9HVEagNeywwQi8B4zBG6mHT7YiS95r3AErGvnf/fileStore7.mp4',
+                //     cover: 'https://impool.oss-cn-hangzhou.aliyuncs.com/sr2Video/impoolLogo.jpg',
+                //     tag_image: 'https://impool.oss-cn-hangzhou.aliyuncs.com/App/static/img/invitation-logo.f5526562.png',
+                //     fabulous: false,//是否赞过
+                //     tagFollow: false,//是否关注过该作者
+                //     author_id: 1,//作者ID
+                //     author: 'Mr.Ma',
+                //     des: 'Smile every day'
+                // },
+                {
+                    url: 'http://ipfs.impool18.com/ipfs/QmTWqeCa9HVEagNeywwQi8B4zBG6mHT7YiS95r3AErGvnf/fileStore3.mp4',
+                    cover: 'https://impool.oss-cn-hangzhou.aliyuncs.com/sr2Video/impoolLogo.jpg',
+                    tag_image: 'https://impool.oss-cn-hangzhou.aliyuncs.com/App/static/img/invitation-logo.f5526562.png',
+                    fabulous: false,//是否赞过
+                    tagFollow: false,//是否关注过该作者
+                    author_id: 1,//作者ID
+                    author: 'Mr.Ma',
+                    des: 'Smile every day'
+                },
+                {
+                    url: 'http://ipfs.impool18.com/ipfs/QmTWqeCa9HVEagNeywwQi8B4zBG6mHT7YiS95r3AErGvnf/fileStore9.mp4',
+                    cover: 'https://impool.oss-cn-hangzhou.aliyuncs.com/sr2Video/impoolLogo.jpg',
+                    tag_image: 'https://impool.oss-cn-hangzhou.aliyuncs.com/App/static/img/invitation-logo.f5526562.png',
+                    fabulous: false,//是否赞过
+                    tagFollow: false,//是否关注过该作者
+                    author_id: 1,//作者ID
+                    author: 'Mr.Ma',
+                    des: 'Smile every day'
+                },
+                ],
                 isVideoShow: true,
                 playOrPause: true,
                 video: null,
@@ -290,7 +322,19 @@
                 this.playvideo()
             }, 500)
         },
+        created () {
+            this.getData()
+        },
         methods: {
+            // 获取IPFS数据
+            async getData() {
+                await ipfsRequest({
+                    url: '/ipfs/QmTWqeCa9HVEagNeywwQi8B4zBG6mHT7YiS95r3AErGvnf',
+                    method: 'get'
+                }).then(res => {
+                    console.log(res);
+                })
+            },
             //获取评论
             getComment() {
                 //setTimeout模拟Ajax请求
